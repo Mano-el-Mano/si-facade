@@ -5,9 +5,16 @@ import { UsersModule } from './users/users.module';
 import { CarsModule } from './cars/cars.module';
 import { APP_FILTER } from '@nestjs/core';
 import { ApiExceptionFilter } from './filters/api-exception.filter';
+import { LogginModule } from './logging/logging.module';
 
 @Module({
-  imports: [ReservationsModule, UsersModule, CarsModule, ReviewsModule],
+  imports: [
+    LogginModule,
+    ReservationsModule,
+    UsersModule,
+    CarsModule,
+    ReviewsModule,
+  ],
   providers: [
     {
       provide: APP_FILTER,

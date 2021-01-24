@@ -2,9 +2,12 @@ import { HttpStatus, Injectable } from '@nestjs/common';
 import { ApiException } from 'src/exceptions/api-exception';
 import { CreateCarDto } from './dto/create-car.dto';
 import fetch from 'node-fetch';
+import { LoggingService } from 'src/logging/logging.service';
 
 @Injectable()
 export class CarsService {
+  constructor(private readonly loggingService: LoggingService) {}
+
   async create(car: CreateCarDto, jwt: string) {
     try {
       const reservationOptions = {
