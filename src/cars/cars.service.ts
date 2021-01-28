@@ -69,7 +69,7 @@ export class CarsService {
   }
 
   async getAll(jwt: string) {
-    try {
+    /*try {
       const reservationOptions = {
         method: 'GET',
         url: 'http://localhost:3456/protected/cars',
@@ -93,6 +93,7 @@ export class CarsService {
         HttpStatus.INTERNAL_SERVER_ERROR,
         e.toString(),
       );
-    }
+    }*/
+    return 'vær så artig';
   }
 }
