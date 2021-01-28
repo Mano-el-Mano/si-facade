@@ -13,7 +13,7 @@ import { LogginModule } from './logging/logging.module';
     ReservationsModule,
     UsersModule,
     CarsModule,
-    ReviewsModule,
+    //ReviewsModule,
   ],
   providers: [
     {
