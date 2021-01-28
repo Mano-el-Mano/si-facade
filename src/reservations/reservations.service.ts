@@ -9,7 +9,7 @@ export class ReservationsService {
     try {
       const reservationOptions = {
         method: 'POST',
-        url: 'http://localhost:3456/protected/reservations',
+        url: 'http://10.152.183.144:3456/protected/reservations',
         headers: {
           Authorization: jwt,
           'content-type': 'application/json',
@@ -27,7 +27,7 @@ export class ReservationsService {
       options.body = JSON.stringify(reservationOptions.body);
       console.log('sent');
       const res = await fetch(
-        'http://localhost:3456/protected/reservations',
+        'http://10.152.183.144:3456/protected/reservations',
         options,
       );
       if (res.status < 300) {
@@ -47,7 +47,7 @@ export class ReservationsService {
     try {
       const reservationOptions = {
         method: 'GET',
-        url: `http://localhost:3456/protected/reservations${id}`,
+        url: `http://10.152.183.144:3456/protected/reservations${id}`,
         headers: {
           Authorization: jwt,
           'content-type': 'application/json',
@@ -57,7 +57,7 @@ export class ReservationsService {
 
       const options: any = Object.assign({}, reservationOptions);
       const res = await fetch(
-        `http://localhost:3456/protected/reservations/${id}`,
+        `http://10.152.183.144:3456/protected/reservations/${id}`,
         options,
       );
       if (res.status < 300) {

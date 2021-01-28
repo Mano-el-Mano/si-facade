@@ -12,7 +12,7 @@ export class CarsService {
     try {
       const reservationOptions = {
         method: 'POST',
-        url: 'http://localhost:3456/protected/cars',
+        url: 'http://10.152.183.144:3456/protected/cars',
         headers: {
           Authorization: jwt,
           'content-type': 'application/json',
@@ -27,7 +27,10 @@ export class CarsService {
 
       const options: any = Object.assign({}, reservationOptions);
       options.body = JSON.stringify(reservationOptions.body);
-      const res = await fetch('http://localhost:3456/protected/cars', options);
+      const res = await fetch(
+        'http://10.152.183.144:3456/protected/cars',
+        options,
+      );
       if (res.status < 300) {
         return res.json();
       } else {
@@ -42,7 +45,7 @@ export class CarsService {
     try {
       const reservationOptions = {
         method: 'GET',
-        url: `http://localhost:3456/protected/cars/${id}`,
+        url: `http://10.152.183.144:3456/protected/cars/${id}`,
         headers: {
           Authorization: jwt,
           'content-type': 'application/json',
@@ -52,7 +55,7 @@ export class CarsService {
 
       const options: any = Object.assign({}, reservationOptions);
       const res = await fetch(
-        `http://localhost:3456/protected/cars/${id}`,
+        `http://10.152.183.144:3456/protected/cars/${id}`,
         options,
       );
       if (res.status < 300) {

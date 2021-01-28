@@ -9,7 +9,7 @@ export class UsersService {
   async signUp(user: CreateUserDto) {
     const signUpOptions = {
       method: 'POST',
-      url: 'http://localhost:3456/public/users/sign-up',
+      url: 'http://10.152.183.144:3456/public/users/sign-up',
       headers: {
         'content-type': 'application/json',
         accept: 'application/json',
@@ -23,9 +23,8 @@ export class UsersService {
 
     const options: any = Object.assign({}, signUpOptions);
     options.body = JSON.stringify(signUpOptions.body);
-    console.log('sent');
     const res = await fetch(
-      'http://localhost:3456/public/users/sign-up',
+      'http://10.152.183.144:3456/public/users/sign-up',
       options,
     );
     if (res.status < 300) {
@@ -38,7 +37,7 @@ export class UsersService {
   async signIn(user: LoginUserDto) {
     const signUpOptions = {
       method: 'POST',
-      url: 'http://localhost:3456/public/users/sign-in',
+      url: 'http://10.152.183.144:3456/public/users/sign-in',
       headers: {
         'content-type': 'application/json',
         accept: 'application/json',
@@ -53,7 +52,7 @@ export class UsersService {
     options.body = JSON.stringify(signUpOptions.body);
     console.log('sent');
     const res = await fetch(
-      'http://localhost:3456/public/users/sign-in',
+      'http://10.152.183.144:3456/public/users/sign-in',
       options,
     );
     if (res.status < 300) {
