@@ -9,7 +9,7 @@ import { LogginModule } from './logging/logging.module';
 
 @Module({
   imports: [
-    LogginModule,
+    //LogginModule,
     ReservationsModule,
     UsersModule,
     CarsModule,

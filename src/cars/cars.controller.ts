@@ -8,8 +8,7 @@ import { CreateCarDto } from './dto/create-car.dto';
 export class CarsController {
   private logType: LogTypes;
   constructor(
-    private readonly carsService: CarsService,
-    private readonly loggingService: LoggingService,
+    private readonly carsService: CarsService, //private readonly loggingService: LoggingService,
   ) {
     this.logType = LogTypes.CAR_RENTAL;
   }
@@ -22,11 +21,11 @@ export class CarsController {
     const jsonRes = await this.carsService.create(createCarDto, jwt);
     console.log(jwt);
     console.log(jsonRes);
-    const res = await this.loggingService.sendCarRentalLog(
+    /* const res = await this.loggingService.sendCarRentalLog(
       this.logType,
       jsonRes.carId,
       jsonRes.createdAt,
-    );
+    );*/
     return jsonRes;
   }
 

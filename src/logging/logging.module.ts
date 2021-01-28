@@ -4,7 +4,7 @@ import { LoggingService } from './logging.service';
 
 @Module({
   imports: [
-    RabbitMQModule.forRoot(RabbitMQModule, {
+    /*RabbitMQModule.forRoot(RabbitMQModule, {
       exchanges: [
         {
           name: 'system-integration',
@@ -13,9 +13,9 @@ import { LoggingService } from './logging.service';
       ],
       uri: 'amqp://localhost:5672',
     }),
-    LogginModule,
+    LogginModule,*/
   ],
-  providers: [LoggingService],
-  exports: [LoggingService],
+  //providers: [LoggingService],
+  //exports: [LoggingService],
 })
 export class LogginModule {}

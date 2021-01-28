@@ -17,8 +17,7 @@ import { LogTypes } from 'src/logTypes';
 export class ReviewsController {
   private logType: LogTypes;
   constructor(
-    private readonly reviewsService: ReviewsService,
-    private readonly loggingService: LoggingService,
+    private readonly reviewsService: ReviewsService, // private readonly loggingService: LoggingService,
   ) {
     this.logType = LogTypes.CAR_REVIEW;
   }
@@ -33,10 +32,10 @@ export class ReviewsController {
     @Param('taskId') taskId: string,
     @Body() createReviewDto: CreateReviewDto,
   ) {
-    return this.reviewsService.completeCreateReviewTask(
+    /*return this.reviewsService.completeCreateReviewTask(
       taskId,
       createReviewDto,
-    );
+    );*/
   }
 
   @Post('task/share/:taskId')

@@ -6,7 +6,7 @@ import { LoggingService } from 'src/logging/logging.service';
 
 @Injectable()
 export class CarsService {
-  constructor(private readonly loggingService: LoggingService) {}
+  constructor() {} //private readonly loggingService: LoggingService
 
   async create(car: CreateCarDto, jwt: string) {
     try {
@@ -34,10 +34,7 @@ export class CarsService {
         throw new ApiException('something went wrong', res.status);
       }
     } catch (e) {
-      throw new ApiException(
-        'Internal server error',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      throw new ApiException('Internal server error', HttpStatus.UNAUTHORIZED);
     }
   }
 

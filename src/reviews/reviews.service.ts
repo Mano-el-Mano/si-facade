@@ -8,7 +8,8 @@ import { LoggingService } from 'src/logging/logging.service';
 export class ReviewsService {
   private camundaUrl: string;
   private logType: LogTypes;
-  constructor(private readonly loggingService: LoggingService) {
+  constructor() {
+    //private readonly loggingService: LoggingService
     //url to camunda proxy server
     this.logType = LogTypes.CAR_REVIEW;
     this.camundaUrl = 'http://localhost:3001/camunda';
@@ -18,11 +19,11 @@ export class ReviewsService {
     const url = `${this.camundaUrl}/review`;
     const response = await (await axios.post(url, createReviewDto)).data;
     const timestamp = new Date().toISOString();
-    this.loggingService.sendCarRentalLog(
+    /*this.loggingService.sendCarRentalLog(
       this.logType,
       createReviewDto.carId,
       timestamp,
-    );
+    );*/
     return response;
   }
 
@@ -39,11 +40,11 @@ export class ReviewsService {
   ) {
     const url = `${this.camundaUrl}/completeReview/${taskId}`;
     const timestamp = new Date().toISOString();
-    this.loggingService.sendCarRentalLog(
+    /* this.loggingService.sendCarRentalLog(
       this.logType,
       createReviewDto.carId,
       timestamp,
-    );
+    );*/
     const response = await (await axios.post(url, createReviewDto)).data;
     return response;
   }
